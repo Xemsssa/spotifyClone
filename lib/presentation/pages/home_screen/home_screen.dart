@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/presentation/pages/chooseRegisterOrSignUpScreen/choose_Register_Or_Sign_Up_Screen.dart';
 import 'package:spotify_clone/presentation/pages/choose_mode/choose_mode_screen.dart';
+import 'package:spotify_clone/presentation/pages/main_screen/widget/main_screen.dart';
 import 'package:spotify_clone/presentation/pages/register/register_screen.dart';
 import 'package:spotify_clone/presentation/pages/sign_in/sign_in.dart';
 
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List list = [
-    SignIn(),
+    MainScreen(),
     RegisterScreen(),
     ChooseModeScreen(),
     ChooseRegisterOrSignUpScreen()
@@ -36,13 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.darkBackground3,
-      appBar: AppBar(
-          backgroundColor: AppColors.darkBackground3,
-          centerTitle: true,
-          leading: null,
-          // title: SvgPicture.asset(AppVectors.smalllogo)
-          title: Image.asset(AppImages.smalllogo)
-      ),
       body: list[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
